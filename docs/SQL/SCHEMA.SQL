@@ -1,7 +1,7 @@
 /*
 CREATE DATABASE IF NOT EXISTS bike_store;
 */
-/*Trocar streetm city and state para tabelas auxiliares e conectar*/
+
 CREATE TABLE IF NOT EXISTS customers
 (
     customer_id SERIAL PRIMARY KEY,
@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS customers
     state VARCHAR(100),
     zip_code VARCHAR(30)
 );
+
 
 CREATE TABLE IF NOT EXISTS stores
 (
@@ -48,7 +49,7 @@ CREATE TABLE IF NOT EXISTS orders
     staff_id SMALLINT,
     order_status CHAR(1),
     order_date DATE,
-    required_data DATE,
+    required_date DATE,
     shipped_date DATE,
 
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
@@ -58,8 +59,8 @@ CREATE TABLE IF NOT EXISTS orders
 
 CREATE TABLE IF NOT EXISTS brands
 (
-    brands_id SERIAL PRIMARY KEY,
-    brands_name VARCHAR(50)
+    brand_id SERIAL PRIMARY KEY,
+    brand_name VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS categories
@@ -71,13 +72,13 @@ CREATE TABLE IF NOT EXISTS categories
 CREATE TABLE IF NOT EXISTS products
 (
     product_id SERIAL PRIMARY KEY,
-    brands_id SMALLINT,
+    brand_id SMALLINT,
     category_id SMALLINT,
     product_name VARCHAR(100),
     model_year SMALLINT,
     list_price FLOAT(2),
 
-    FOREIGN KEY (brands_id) REFERENCES brands(brands_id),
+    FOREIGN KEY (brand_id) REFERENCES brands(brand_id),
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
 

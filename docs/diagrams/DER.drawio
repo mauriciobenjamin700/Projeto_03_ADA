@@ -1,13 +1,13 @@
 <mxfile host="65bd71144e">
     <diagram name="Página-1" id="qnK1JlZNRk4C6kkwQXSk">
-        <mxGraphModel dx="1212" dy="229" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1855" dy="293" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="wWx8tg5XSIsGLt0qT9gX-53" value="" style="group" parent="1" connectable="0" vertex="1">
                     <mxGeometry x="-49" y="320" width="220" height="210" as="geometry"/>
                 </mxCell>
-                <mxCell id="wWx8tg5XSIsGLt0qT9gX-1" value="order" style="swimlane;whiteSpace=wrap;html=1;" parent="wWx8tg5XSIsGLt0qT9gX-53" vertex="1">
+                <mxCell id="wWx8tg5XSIsGLt0qT9gX-1" value="orders" style="swimlane;whiteSpace=wrap;html=1;" parent="wWx8tg5XSIsGLt0qT9gX-53" vertex="1">
                     <mxGeometry width="220.00000000000003" height="210" as="geometry"/>
                 </mxCell>
                 <mxCell id="wWx8tg5XSIsGLt0qT9gX-2" value="PK: order_id - SERIAL" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;flipV=0;" parent="wWx8tg5XSIsGLt0qT9gX-1" vertex="1">
@@ -214,10 +214,10 @@
                 <mxCell id="PBJowYEfJpC3dOtzdiI3-39" value="brands" style="swimlane;whiteSpace=wrap;html=1;" parent="PBJowYEfJpC3dOtzdiI3-38" vertex="1">
                     <mxGeometry width="190" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="PBJowYEfJpC3dOtzdiI3-40" value="PK: brands_id SERIAL" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="PBJowYEfJpC3dOtzdiI3-39" vertex="1">
+                <mxCell id="PBJowYEfJpC3dOtzdiI3-40" value="PK: brand_id SERIAL" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="PBJowYEfJpC3dOtzdiI3-39" vertex="1">
                     <mxGeometry x="10" y="25.67" width="180" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="PBJowYEfJpC3dOtzdiI3-41" value="brands_name: VARCHAR(50)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="PBJowYEfJpC3dOtzdiI3-39" vertex="1">
+                <mxCell id="PBJowYEfJpC3dOtzdiI3-41" value="brand_name: VARCHAR(50)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="PBJowYEfJpC3dOtzdiI3-39" vertex="1">
                     <mxGeometry x="10" y="52" width="180" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="PBJowYEfJpC3dOtzdiI3-46" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERoneToMany;endFill=0;startArrow=ERone;startFill=0;" parent="1" source="wWx8tg5XSIsGLt0qT9gX-103" edge="1">
@@ -230,7 +230,7 @@
                         <mxPoint x="-469" y="600" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="PBJowYEfJpC3dOtzdiI3-53" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=ERmany;endFill=0;startArrow=ERone;startFill=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="wWx8tg5XSIsGLt0qT9gX-91" edge="1" target="wWx8tg5XSIsGLt0qT9gX-110">
+                <mxCell id="PBJowYEfJpC3dOtzdiI3-53" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=ERmany;endFill=0;startArrow=ERone;startFill=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="wWx8tg5XSIsGLt0qT9gX-91" target="wWx8tg5XSIsGLt0qT9gX-110" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="411" y="500" as="targetPoint"/>
                     </mxGeometry>

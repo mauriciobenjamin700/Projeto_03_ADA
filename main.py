@@ -1,18 +1,14 @@
-from src.database.conection import dataBase
-from src.management.add import add_csv_customers,add_csv_stores,add_csv_staffs
+from src.database.conection import bike_db
+from src.management.add import *
+from src.management.edit import *
+from src.management.remove import *
+from src.management.search import *
+from src.utils.menu import *
+from src.utils.presentation import *
 
-conn = dataBase(database_name='bmrlylsu',user_name='bmrlylsu',user_password='dEJ1yEK_MDfJqWO0UVVsbwxy6_7hcLd_',user_host='isabelle.db.elephantsql.com',user_port=5432)
+def main():
+    #conexão com o banco de dados
+    conn = bike_db
 
-if conn != None:
-    cursor = conn.cursor()
-
-    print(conn)
-    #add_csv_customers(cursor,'docs\\csv\\customers.csv')
-    #add_csv_stores(cursor,'docs\\csv\\stores.csv')
-    #add_csv_staffs(cursor,'docs\\csv\\staffs.csv')
-    conn.commit()
-    cursor.close()
     conn.close()
-    print("terminei")
-else:
-    print("Falhei")
+main()
