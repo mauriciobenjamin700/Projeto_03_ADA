@@ -1,0 +1,5 @@
+dbname=bmrlylsu,
+            user=bmrlylsu,
+            password=dEJ1yEK_MDfJqWO0UVVsbwxy6_7hcLd_,
+            host=isabelle.db.elephantsql.com,
+            port=5432
