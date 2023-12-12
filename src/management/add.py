@@ -25,7 +25,7 @@ def add_staffs(conn,store_id, email, active, phone, first_name, last_name):
     conn.commit()
     cursor.close()
     
-def add_csv_orders(conn,customer_id, staff_id, order_status, order_date, required_date, shipped_date):
+def add_orders(conn,customer_id, staff_id, order_status, order_date, required_date, shipped_date):
     
     cursor = conn.cursor()
     query = "INSERT INTO orders (customer_id, staff_id, order_status, order_date, required_date, shipped_date) VALUES (%s, %s, %s, %s, %s, %s)"

@@ -41,8 +41,6 @@ def add_csv_staffs(conn,csv_file):
         values = (row['store_id'],row['email'],row['active'],row['phone'],row['first_name'],row['last_name'],)  
         cursor.execute(query, values)
         
-        
-        
     conn.commit()
     cursor.close()
     
