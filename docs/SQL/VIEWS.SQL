@@ -26,7 +26,7 @@ ORDER BY list_price ASC
 LIMIT 20;
 
 CREATE VIEW marca_mais_vendida AS
-SELECT b.brand_id, b.brand_name, COUNT(oi.quantity) AS total_sold
+SELECT b.brand_id, b.brand_name, SUM(oi.quantity) AS total_sold
 FROM brands b
 JOIN products p ON b.brand_id = p.brand_id
 JOIN order_items oi ON p.product_id = oi.product_id
@@ -45,3 +45,13 @@ FROM order_items
 JOIN products ON order_items.product_id = products.product_id
 GROUP BY order_items.product_id, products.product_name
 ORDER BY (sum(order_items.quantity)) DESC;
+
+create view categoria_mais_vendida as
+select categories.category_name, sum(order_items.quantity) as total from categories
+join products on categories.category_id = products.category_id
+join order_items on products.product_id = order_items.product_id
+group by categories.category_name
+order by total desc;
+
+
+
