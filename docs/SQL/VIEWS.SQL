@@ -2,7 +2,7 @@ CREATE VIEW maiores_compras as
 SELECT order_id, SUM(list_price * quantity) as valor_total
 FROM order_items
 GROUP BY order_id
-ORDER BY valor_total DESC
+ORDER BY valor_total DESC
 
 
 CREATE VIEW produtos_caros_top20 AS
@@ -24,6 +24,38 @@ SELECT product_name, list_price
 FROM products
 ORDER BY list_price ASC
 LIMIT 20;
+
+CREATE VIEW marca_mais_vendida AS
+SELECT b.brand_id, b.brand_name, SUM(oi.quantity) AS total_sold
+FROM brands b
+JOIN products p ON b.brand_id = p.brand_id
+JOIN order_items oi ON p.product_id = oi.product_id
+GROUP BY b.brand_id, b.brand_name
+ORDER BY total_sold DESC
+LIMIT 1;
+
+CREATE MATERIALIZED VIEW materialized_clientes_por_cidade AS
+select * from clientes_por_cidade;
+
+CREATE VIEW produtos_mais_vendidos AS
+SELECT sum(order_items.quantity) AS qtd_total,
+order_items.product_id,
+products.product_name
+FROM order_items
+JOIN products ON order_items.product_id = products.product_id
+GROUP BY order_items.product_id, products.product_name
+ORDER BY (sum(order_items.quantity)) DESC;
+
+create view categoria_mais_vendida as
+select categories.category_name, sum(order_items.quantity) as total from categories
+join products on categories.category_id = products.category_id
+join order_items on products.product_id = order_items.product_id
+group by categories.category_name
+order by total desc;
+
+
+
+
 
 
 CREATE VIEW loja_maior_renda AS
