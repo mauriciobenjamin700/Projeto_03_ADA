@@ -36,3 +36,12 @@ LIMIT 1;
 
 CREATE MATERIALIZED VIEW materialized_clientes_por_cidade AS
 select * from clientes_por_cidade;
+
+ CREATE VIEW produtos_mais_vendidos AS
+ SELECT sum(order_items.quantity) AS qtd_total,
+ order_items.product_id,
+ products.product_name
+ FROM order_items
+ JOIN products ON order_items.product_id = products.product_id
+ GROUP BY order_items.product_id, products.product_name
+ ORDER BY (sum(order_items.quantity)) DESC;
