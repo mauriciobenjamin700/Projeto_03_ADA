@@ -24,3 +24,21 @@ SELECT product_name, list_price
 FROM products
 ORDER BY list_price ASC
 LIMIT 20;
+
+
+CREATE VIEW loja_maior_renda AS
+SELECT
+    stores.store_id, 
+    COUNT(DISTINCT orders.order_id) AS pedidos,
+	SUM(order_items.list_price * order_items.quantity) as valor_total
+FROM
+    order_items
+INNER JOIN
+	orders ON order_items.order_id = orders.order_id
+INNER JOIN
+    staffs ON orders.staff_id = staffs.staff_id
+INNER JOIN
+    stores ON staffs.store_id = stores.store_id
+GROUP BY
+    stores.store_id
+ORDER BY valor_total DESC
