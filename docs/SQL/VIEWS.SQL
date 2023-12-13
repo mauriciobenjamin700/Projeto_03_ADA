@@ -74,3 +74,11 @@ INNER JOIN
 GROUP BY
     stores.store_id
 ORDER BY valor_total DESC
+
+
+CREATE VIEW ticket_medio AS
+SELECT
+    COUNT(DISTINCT order_items.order_id) AS pedidos,
+	(SUM(order_items.list_price * order_items.quantity)/COUNT(DISTINCT order_items.order_id)) as ticket_medio
+FROM
+    order_items;
