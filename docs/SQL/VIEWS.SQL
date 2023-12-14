@@ -78,3 +78,18 @@ SELECT
 	(SUM(order_items.list_price * order_items.quantity)/COUNT(DISTINCT order_items.order_id)) as ticket_medio
 FROM
     order_items;
+
+CREATE VIEW stock_total_por_item as
+ SELECT products.product_name,
+    stocks.product_id,
+    sum(stocks.quantity) AS stock_total
+   FROM stocks
+     JOIN products ON stocks.product_id = products.product_id
+  GROUP BY stocks.product_id, products.product_name
+  ORDER BY stocks.product_id;
+
+CREATE VIEW stock_total_por_loja as
+ SELECT stocks.store_id,
+    sum(stocks.quantity) AS stock_total
+   FROM stocks
+  GROUP BY stocks.store_id;
