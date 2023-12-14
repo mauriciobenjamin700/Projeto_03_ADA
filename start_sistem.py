@@ -4,6 +4,7 @@ from src.database.drop import drop_scheme
 from src.database.truncate import truncate_scheme
 from management.add_csv import *
 
+# se seu SO é linux, use '/' como separador, caso seja windows use '\\'
 PATH = 'docs/csv/'
 
 def sistem():

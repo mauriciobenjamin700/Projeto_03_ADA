@@ -21,3 +21,11 @@ Este repositório contém as estruturas usadas para gerar o banco de dados, desd
 ![MER](docs/diagrams/MER.svg)
 ## Diagrama DER
 ![MER](docs/diagrams/DER.svg)
+
+# Como navegar no repositório? 
+O repositório está divido em 3 etapas, sendo elas:
+- Pasta docs: Informações para o entendimento e construção do banco de dados.
+- Pasta src: Codigo fonte das funcionalidades para acesso e manipulação do banco de dados
+- Área local: Contem informações base para o repositório, um script para inciar o sistema e um arquivo main para operar o sistema
+
+

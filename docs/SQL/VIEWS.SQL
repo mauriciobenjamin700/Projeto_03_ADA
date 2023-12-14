@@ -54,10 +54,6 @@ group by categories.category_name
 order by total desc;
 
 
-
-
-
-
 CREATE VIEW loja_maior_renda AS
 SELECT
     stores.store_id, 
